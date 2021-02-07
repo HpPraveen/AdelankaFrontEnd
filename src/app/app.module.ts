@@ -4,15 +4,23 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { DevExtremeModule } from 'devextreme-angular';
+import { UserDetailsComponent } from './Components/user-details/user-details.component';
+// import { SystemUserService } from './Services/system-user-service';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DevExtremeModule
   ],
-  providers: [],
+  providers: [
+    // SystemUserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
