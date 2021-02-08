@@ -24,6 +24,7 @@ export class UserNoteComponent implements OnInit {
   }
 
   CreateNoteClick(e){
+    debugger
     if (this.noteTitle === null || this.noteTitle === '' || this.noteDetails === null || this.noteDetails === '' ) {
       notify(
         {
@@ -40,7 +41,7 @@ export class UserNoteComponent implements OnInit {
       );
     } else {
       this.userNoteDetails = {
-        Id: null,
+        Id: 0,
         Username:  this.loggedUserName,
         Title: this.noteDetails,
         Note: this.noteTitle,
@@ -49,6 +50,7 @@ export class UserNoteComponent implements OnInit {
        };
       this.userNoteServiceService.AddNewUserNoteDetails(this.userNoteDetails).subscribe((c) => {
         if (c === true) {
+          debugger
           window.location.reload();
           notify(
             {
