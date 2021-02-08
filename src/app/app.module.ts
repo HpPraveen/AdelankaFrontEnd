@@ -7,14 +7,13 @@ import { AppComponent } from './app.component';
 import { DevExtremeModule } from 'devextreme-angular';
 
 import { HttpClientModule } from '@angular/common/http';
-import { UserDetailComponent } from './Components/user-details/UserDetail/UserDetail.component';
-import { UserNoteComponent } from './Components/user-details/UserNote/UserNote.component';
-
+import { UserNoteComponent } from './Components/UserNote/UserNote.component';
+import { UserDetailsComponent } from './Components/UserDetails/UserDetails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserDetailComponent,
+    UserDetailsComponent,
     UserNoteComponent
   ],
   imports: [
