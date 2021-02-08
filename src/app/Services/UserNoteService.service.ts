@@ -11,8 +11,12 @@ export class UserNoteServiceService {
 
   constructor(private http: HttpClient) { }
 
- GetAllNoteDetails() {
+GetAllNoteDetails() {
   return this.http.get<UserNoteDetails[]>(this.baseUrl + 'AllUserNoteDetails');
+}
+
+GetNoteDetailsByUser(userName: string) {
+  return this.http.get<UserNoteDetails[]>(this.baseUrl + 'UserNoteDetailsByUser/' + userName);
 }
 
 AddNewUserNoteDetails(userNoteDetails: UserNoteDetails) {

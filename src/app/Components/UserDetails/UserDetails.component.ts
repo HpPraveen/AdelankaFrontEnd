@@ -75,6 +75,7 @@ export class UserDetailsComponent implements OnInit {
         const userDetail = JSON.parse(JSON.stringify(c));
         if (userDetail.length !== 0) {
           this.sharedService.loggedUser = userDetail[0].firstName + ' ' + userDetail[0].lastName;
+          this.sharedService.loggedUserName = this.signInUsername;
           this.router.navigate(['/createNote']);
           notify(
             {

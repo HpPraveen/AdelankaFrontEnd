@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserNoteDetails } from 'src/app/Models/UserNoteDetails';
 import { UserNoteServiceService } from 'src/app/Services/UserNoteService.service';
 import notify from 'devextreme/ui/notify';
+import { SharedService } from 'src/app/Services/Shared.service';
 
 @Component({
   selector: 'app-ViewNotes',
@@ -13,14 +14,27 @@ export class ViewNotesComponent implements OnInit {
   userNoteDetails: UserNoteDetails[];
   comment: string = null;
   userNoteDetail: UserNoteDetails;
+  loggedUserName: string = null;
 
-  constructor(private userNoteServiceService: UserNoteServiceService) { }
+  constructor(private sharedService: SharedService, private userNoteServiceService: UserNoteServiceService) { }
 
   ngOnInit() {
+    this.loggedUserName = this.sharedService.loggedUser;
+    this.GetLoggedUserNotes(this.loggedUserName);
+  }
+
+  public GetAllNotes(){
     this.userNoteServiceService.GetAllNoteDetails().subscribe((c) => {
       this.userNoteDetails = c;
     });
   }
+
+  public GetLoggedUserNotes(userName: string){
+    this.userNoteServiceService.GetNoteDetailsByUser(userName).subscribe((c) => {
+      this.userNoteDetails = c;
+    });
+  }
+
 
   commentChanged(e)
   {
