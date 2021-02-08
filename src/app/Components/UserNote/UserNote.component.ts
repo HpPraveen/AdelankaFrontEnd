@@ -14,13 +14,14 @@ export class UserNoteComponent implements OnInit {
   noteTitle: string = null;
   noteDetails: string = null;
   userNoteDetails: UserNoteDetails;
+  loggedUserNmae: string = null;
 
   // tslint:disable-next-line:max-line-length
   constructor(private userNoteServiceService: UserNoteServiceService, private sharedService: SharedService, private router: Router) { }
 
   ngOnInit() {
     debugger;
-    let c = this.sharedService.loggedUser;
+    this.loggedUserNmae = this.sharedService.loggedUser;
   }
 
   CreateNoteClick(e){
@@ -41,7 +42,7 @@ export class UserNoteComponent implements OnInit {
     } else {
       debugger;
       this.userNoteDetails = {
-        Username:  this.sharedService.loggedUser,
+        Username:  this.loggedUserNmae,
         Title: this.noteDetails,
         Note: this.noteTitle,
         Comment: 'Newly created',
