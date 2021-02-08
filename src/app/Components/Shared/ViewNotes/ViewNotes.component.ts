@@ -15,6 +15,7 @@ export class ViewNotesComponent implements OnInit {
   comment: string = null;
   userNoteDetail: UserNoteDetails;
   loggedUserName: string = null;
+  defualtCommentValue: string = null;
 
   constructor(private sharedService: SharedService, private userNoteServiceService: UserNoteServiceService) { }
 
@@ -53,7 +54,7 @@ export class ViewNotesComponent implements OnInit {
 
     this.userNoteServiceService.UpdateNoteDetails(this.userNoteDetail).subscribe((c) => {
       if (c === true) {
-        this.comment = '';
+        this.defualtCommentValue = '';
         notify(
           {
             message: 'Comment added successfully',
