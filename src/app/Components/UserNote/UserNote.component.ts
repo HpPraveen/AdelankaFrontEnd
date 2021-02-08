@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import notify from 'devextreme/ui/notify';
+import { SharedService } from 'src/app/Services/Shared.service';
 import { UserNoteDetails } from 'src/app/Models/UserNoteDetails';
-import { SystemUserService } from 'src/app/Services/system-user-service';
 import { UserNoteServiceService } from 'src/app/Services/UserNoteService.service';
 @Component({
   selector: 'app-UserNote',
@@ -16,9 +16,11 @@ export class UserNoteComponent implements OnInit {
   userNoteDetails: UserNoteDetails;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private userNoteServiceService: UserNoteServiceService, private systemUserService: SystemUserService, private router: Router) { }
+  constructor(private userNoteServiceService: UserNoteServiceService, private sharedService: SharedService, private router: Router) { }
 
   ngOnInit() {
+    debugger;
+    let c = this.sharedService.loggedUser;
   }
 
   CreateNoteClick(e){
@@ -39,7 +41,7 @@ export class UserNoteComponent implements OnInit {
     } else {
       debugger;
       this.userNoteDetails = {
-        Username:  this.systemUserService.loggedUser,
+        Username:  this.sharedService.loggedUser,
         Title: this.noteDetails,
         Note: this.noteTitle,
         Comment: 'Newly created',
@@ -47,6 +49,7 @@ export class UserNoteComponent implements OnInit {
        };
       this.userNoteServiceService.AddNewUserNoteDetails(this.userNoteDetails).subscribe((c) => {
         if (c === true) {
+          window.location.reload();
           notify(
             {
               message: 'Successfully Save',

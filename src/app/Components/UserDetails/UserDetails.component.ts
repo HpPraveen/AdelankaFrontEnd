@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import notify from 'devextreme/ui/notify';
+import { SharedService } from 'src/app/Services/Shared.service';
 import { SystemUserDetails } from 'src/app/Models/SystemUserDetails';
 import { SystemUserService } from 'src/app/Services/system-user-service';
 
@@ -24,7 +25,7 @@ export class UserDetailsComponent implements OnInit {
   systemUserDetails: Array<SystemUserDetails> = [];
 
 
-  constructor(private systemUserService: SystemUserService, private router: Router) { }
+  constructor(private systemUserService: SystemUserService, private sharedService: SharedService, private router: Router) { }
 
   ngOnInit(){
   }
@@ -73,7 +74,7 @@ export class UserDetailsComponent implements OnInit {
       this.systemUserService.GetSystemUserByUserNameAndPassword(this.signInUsername, this.signInPsw).subscribe((c) => {
         const userDetail = JSON.parse(JSON.stringify(c));
         if (userDetail.length !== 0) {
-          this.systemUserService.loggedUser = this.signInUsername;
+          this.sharedService.loggedUser = userDetail[0].firstName + ' ' + userDetail[0].lastName;
           this.router.navigate(['/createNote']);
           notify(
             {
