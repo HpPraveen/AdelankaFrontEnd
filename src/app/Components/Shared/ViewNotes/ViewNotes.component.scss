@@ -1,0 +1,206 @@
+/* ------------ CARD / LIST STYLES --------------- */
+
+.cardresult {
+    /* ----- default card view ----- */
+    ul {
+        /* card group */
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
+        li {
+            /* individual cards */
+            list-style: none;
+            border: 1px solid lightskyblue;
+            background: white;
+            margin: 0 10px 10px 0;
+            padding: 5px 10px 10px;
+            border-radius: 5px;
+            min-width: 310px;
+            flex: 1 0 20%;
+            h3 {
+                margin: 0;
+                font-size: 15px;
+                background: lighten(lightskyblue, 18%);
+                padding: 0 5px;
+            }
+            dl {
+                margin: 0;
+                overflow: auto;
+                &.dates {
+                    overflow: auto;
+                    margin: 0 0 8px;
+                    dt {
+                        float: left;
+                        margin-left: 10px;
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                        &:after {
+                            content: ":";
+                            display: inline-block;
+                            margin-right: 3px;
+                        }
+                    }
+                    dd {
+                        margin: 0;
+                        float: left;
+                    }
+                }
+                &.info {
+                    display: flex;
+                    dt {
+                        width: 25%;
+                        text-align: center;
+                    }
+                    dd {
+                        width: 25%;
+                        margin-top: 1.75em;
+                        margin-left: -25%;
+                        border-top: 1px solid lightgray;
+                        text-align: center;
+                    }
+                }
+                &.quotes {
+                    display: flex;
+                    dt {
+                        width: 20%;
+                        text-align: center;
+                    }
+                    dd {
+                        width: 20%;
+                        margin-top: 1.75em;
+                        margin-left: -20%;
+                        border-top: 1px solid lightgray;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        &.header {
+            display: none;
+        }
+    }
+    /* ----- list view ----- */
+    &.list {
+        ul {
+            /* list group */
+            display: block;
+            margin-top: 0;
+            li {
+                /* individual list item */
+                width: auto;
+                overflow: auto;
+                margin: 0;
+                padding: 8px 15px 5px;
+                border: none;
+                border-bottom: 1px solid lightgray;
+                border-radius: 0;
+                &:nth-child(odd) {
+                    background: lighten(lightskyblue, 20%);
+                }
+                h3 {
+                    float: left;
+                    width: 30%;
+                    min-width: 340px;
+                    font-size: 14px;
+                    background: transparent;
+                }
+                dl {
+                    &.dates {
+                        float: left;
+                        width: 30%;
+                        dt {
+                            line-height: 1.5;
+                            display: none;
+                        }
+                        dd {
+                            width: 50%;
+                            margin: 0;
+                            float: left;
+                            line-height: 1.5;
+                        }
+                    }
+                    &.info {
+                        display: inline;
+                        float: left;
+                        width: 40%;
+                        dt {
+                            float: left;
+                            width: auto;
+                            text-align: left;
+                            display: none;
+                            &:after {
+                                content: ":";
+                                display: inline-block;
+                                margin-right: 3px;
+                            }
+                        }
+                        dd {
+                            float: left;
+                            width: 25%;
+                            margin: 0;
+                            border-top: none;
+                            text-align: left;
+                        }
+                    }
+                    &.quotes {
+                        display: inline;
+                        float: left;
+                        width: 40%;
+                        dt {
+                            float: left;
+                            width: auto;
+                            text-align: left;
+                            display: none;
+                            &:after {
+                                content: ":";
+                                display: inline-block;
+                                margin-right: 3px;
+                            }
+                        }
+                        dd {
+                            float: left;
+                            width: 25%;
+                            margin: 0;
+                            border-top: none;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+            &.header {
+                margin: 10px 0 0;
+                h3 {
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+                li {
+                    padding: 10px 15px 5px;
+                    background: white;
+                    dl {
+                        &.dates {
+                            dt {
+                                display: inline;
+                                width: 50%;
+                                margin: 0;
+                                &:after {
+                                    content: "";
+                                }
+                            }
+                        }
+                        &.info {
+                            dt {
+                                display: inline;
+                                width: 25%;
+                                margin: 0;
+                                &:after {
+                                    content: "";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

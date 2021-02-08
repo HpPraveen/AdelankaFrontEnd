@@ -8,6 +8,7 @@ import { UrlConfig } from '../Shared/UrlConfig';
 })
 export class SystemUserService {
   private baseUrl = UrlConfig.baseUrl;
+  loggedUser: string;
 
   constructor(private http: HttpClient) { }
 

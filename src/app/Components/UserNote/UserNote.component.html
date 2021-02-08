@@ -1,3 +1,64 @@
-<p>
-  UserNote works!
-</p>
+<section class="sectionall widget-message">
+    <div class="tile-header bg-lightgreen">
+        <div class="tile-hdframe">
+            <div class="tile-hdicon">
+                <i class="fa fa-file-text" aria-hidden="true"></i>
+            </div>
+            <h1>
+                <strong>Create User Note</strong>
+            </h1>
+
+        </div>
+    </div>
+    <br>
+    <div class=" tile-body p-0 bg-white ">
+        <div class="p-7">
+            <div class="dx-field">
+                <div class="widget-container">
+                    <div class="dx-field">
+
+                        <div id="form-container">
+
+                            <div class="row searcheader">
+
+                                <div class="col-md-3">
+                                    <div class="dx-field">
+                                        <div class="dx-field-label">Title</div>
+                                        <div class="dx-field-value">
+                                            <dx-text-box [(value)]="noteTitle"></dx-text-box>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="dx-field">
+                                        <div class="dx-field-label">Note</div>
+                                        <div class="dx-field-value">
+                                            <dx-text-area [(value)]="noteDetails"></dx-text-area>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <dx-button stylingMode="contained" text="Create Note" type="success" class="right" [width]="120" (click)="CreateNoteClick($event)">
+                                        </dx-button>
+                                        <dx-button stylingMode="text" text="View Notes" type="default" [width]="120" (onClick)="viewNotesClick($event)">
+                                        </dx-button>
+                                    </div>
+                                    <div class="col-md-4">
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

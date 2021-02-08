@@ -9,12 +9,14 @@ import { DevExtremeModule } from 'devextreme-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { UserNoteComponent } from './Components/UserNote/UserNote.component';
 import { UserDetailsComponent } from './Components/UserDetails/UserDetails.component';
+import { ViewNotesComponent } from './Components/Shared/ViewNotes/ViewNotes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserDetailsComponent,
-    UserNoteComponent
+    UserNoteComponent,
+    ViewNotesComponent
   ],
   imports: [
     BrowserModule,

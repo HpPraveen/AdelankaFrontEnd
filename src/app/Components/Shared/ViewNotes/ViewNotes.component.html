@@ -1,0 +1,26 @@
+<div class="list-container">
+    <dx-list [dataSource]="userNoteDetails">
+        <div *dxTemplate="let item of 'item'">
+            <h3>{{item.title}}</h3>
+            <dl class="dates">
+                <dt>{{item.note}}</dt>
+                <dd></dd>
+                <br>
+                <dt>User: {{item.username}}</dt>
+                <dd></dd>
+                <dt>Date Modified: {{item.modifiedDate}}</dt>
+                <dd></dd>
+                <br>
+                <div class="dx-field">
+                    <div class="dx-field-value">
+                        <dx-text-area placeholder="Type your Comment" [(value)]="comment"></dx-text-area>
+                        <dx-button stylingMode="Add Comment" text="Create Note" type="success" class="right" [width]="120">
+                        </dx-button>
+                    </div>
+
+                </div>
+
+            </dl>
+        </div>
+    </dx-list>
+</div>

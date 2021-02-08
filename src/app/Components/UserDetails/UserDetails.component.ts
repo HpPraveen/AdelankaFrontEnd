@@ -73,7 +73,8 @@ export class UserDetailsComponent implements OnInit {
       this.systemUserService.GetSystemUserByUserNameAndPassword(this.signInUsername, this.signInPsw).subscribe((c) => {
         const userDetail = JSON.parse(JSON.stringify(c));
         if (userDetail.length !== 0) {
-          this.router.navigate(['/viewNote']);
+          this.systemUserService.loggedUser = this.signInUsername;
+          this.router.navigate(['/createNote']);
           notify(
             {
               message: 'Successfully Sign In',
