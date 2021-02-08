@@ -53,7 +53,7 @@ export class ViewNotesComponent implements OnInit {
 
     this.userNoteServiceService.UpdateNoteDetails(this.userNoteDetail).subscribe((c) => {
       if (c === true) {
-        window.location.reload();
+        this.comment = '';
         notify(
           {
             message: 'Comment added successfully',
