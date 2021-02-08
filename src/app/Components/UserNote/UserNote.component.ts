@@ -51,7 +51,8 @@ export class UserNoteComponent implements OnInit {
       this.userNoteServiceService.AddNewUserNoteDetails(this.userNoteDetails).subscribe((c) => {
         if (c === true) {
           debugger
-          window.location.reload();
+          this.noteTitle = '';
+          this.noteDetails = '';
           notify(
             {
               message: 'Successfully Save',
