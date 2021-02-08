@@ -22,8 +22,13 @@ export class ViewNotesComponent implements OnInit {
     });
   }
 
-  addCommentClick(e){
+  commentChanged(e)
+  {
+    this.comment = e.value;
+  }
 
+  addCommentClick(e){
+    debugger;
     this.userNoteDetail = {
       Comment: this.comment,
       Username: e.username,

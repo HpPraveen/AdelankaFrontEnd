@@ -13,7 +13,7 @@
                 <br>
                 <div class="dx-field">
                     <div class="dx-field-value">
-                        <dx-text-area placeholder="Type your Comment" [(value)]="comment"></dx-text-area>
+                        <dx-text-area placeholder="Type your Comment" (onValueChanged)="commentChanged($event)"></dx-text-area>
                         <dx-button stylingMode="Add Comment" text="Create Note" type="success" class="right" [width]="120" (onClick)="addCommentClick(item)">
                         </dx-button>
                     </div>
