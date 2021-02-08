@@ -4,6 +4,5 @@ export class SystemUserDetails {
   UserName: string;​​​​​​​
   Email: string;​​​​​​​
   Password: string;​​​​​​​
-  PhoneNumber: string;​​​​​​​
   IsActive: boolean;​​​​​​​
 }

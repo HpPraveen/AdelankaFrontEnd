@@ -1,3 +1,3 @@
-export class UrlConfig {
-  baseUrl: 'https://localhost:44337/';
-}
+export const UrlConfig: any = {
+  baseUrl: 'https://localhost:44337/'
+};

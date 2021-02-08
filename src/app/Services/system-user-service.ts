@@ -7,14 +7,18 @@ import { UrlConfig } from '../Shared/UrlConfig';
   providedIn: 'root'
 })
 export class SystemUserService {
-  private baseUrl = UrlConfig;
+  private baseUrl = UrlConfig.baseUrl;
 
   constructor(private http: HttpClient) { }
 
   // tslint:disable-next-line:typedef
   GetSystemUserByUserNameAndPassword(userName: string,  password: string) {
-    debugger;
     return this.http.get<SystemUserDetails[]>(this.baseUrl + 'UserDetails/' + userName + '/' + password);
+  }
+
+  // tslint:disable-next-line:typedef
+  AddNewUserDetails(systemUserDetails: SystemUserDetails) {
+    return this.http.post(this.baseUrl + 'NewUserDetails', systemUserDetails);
   }
 
 }

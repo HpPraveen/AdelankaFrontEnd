@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserDetailsComponent } from './Components/user-details/user-details.component';
+import { UserDetailComponent } from './Components/user-details/UserDetail/UserDetail.component';
+import { UserNoteComponent } from './Components/user-details/UserNote/UserNote.component';
+
 
 const routes: Routes = [
   {
@@ -10,7 +12,11 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: UserDetailsComponent
+    component: UserDetailComponent
+  },
+  {
+    path: 'viewNote',
+    component: UserNoteComponent
   }
 
 ];

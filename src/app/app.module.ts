@@ -5,21 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { DevExtremeModule } from 'devextreme-angular';
-import { UserDetailsComponent } from './Components/user-details/user-details.component';
-// import { SystemUserService } from './Services/system-user-service';
+
+import { HttpClientModule } from '@angular/common/http';
+import { UserDetailComponent } from './Components/user-details/UserDetail/UserDetail.component';
+import { UserNoteComponent } from './Components/user-details/UserNote/UserNote.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserDetailsComponent
+    UserDetailComponent,
+    UserNoteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DevExtremeModule
+    DevExtremeModule,
+    HttpClientModule
   ],
   providers: [
-    // SystemUserService
   ],
   bootstrap: [AppComponent]
 })
