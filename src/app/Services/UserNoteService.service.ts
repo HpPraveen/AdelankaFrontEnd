@@ -11,14 +11,16 @@ export class UserNoteServiceService {
 
   constructor(private http: HttpClient) { }
 
- // tslint:disable-next-line:typedef
  GetAllNoteDetails() {
   return this.http.get<UserNoteDetails[]>(this.baseUrl + 'AllUserNoteDetails');
 }
 
-// tslint:disable-next-line:typedef
 AddNewUserNoteDetails(userNoteDetails: UserNoteDetails) {
   return this.http.post(this.baseUrl + 'NewUserNoteDetails', userNoteDetails);
+}
+
+UpdateNoteDetails(userNoteDetails: UserNoteDetails) {
+  return this.http.put(this.baseUrl + 'UpdateUserNoteDetails', userNoteDetails);
 }
 
 }

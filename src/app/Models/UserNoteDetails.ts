@@ -1,4 +1,5 @@
 export class UserNoteDetails {
+  Id: number;
   Username: string;​​​​​​​
   Title: string;​​​​​​​
   Note: string;​​​​​​​
