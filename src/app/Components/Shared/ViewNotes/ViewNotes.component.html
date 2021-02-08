@@ -1,9 +1,9 @@
 <div class="list-container">
     <dx-list [dataSource]="userNoteDetails">
         <div *dxTemplate="let item of 'item'">
-            <h3>{{item.title}}</h3>
-            <dl class="dates">
-                <dt>{{item.note}}</dt>
+            <h3>{{item.note}}</h3>
+            <dl>
+                <dt>{{item.title}}</dt>
                 <dd></dd>
                 <br>
                 <dt>User: {{item.username}}</dt>
