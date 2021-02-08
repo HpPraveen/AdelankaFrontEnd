@@ -55,7 +55,6 @@ export class UserDetailsComponent implements OnInit {
   }
 
   SignInClick(e) {
-    debugger;
     if (this.signInUsername === null || this.signInUsername === '' || this.signInPsw === null || this.signInPsw === '' ) {
       notify(
         {
@@ -73,8 +72,21 @@ export class UserDetailsComponent implements OnInit {
     } else {
       this.systemUserService.GetSystemUserByUserNameAndPassword(this.signInUsername, this.signInPsw).subscribe((c) => {
         const userDetail = JSON.parse(JSON.stringify(c));
-        if (userDetail.count === 0) {
+        if (userDetail.length !== 0) {
           this.router.navigate(['/viewNote']);
+          notify(
+            {
+              message: 'Successfully Sign In',
+              position: {
+                my: 'top right',
+                at: 'top right',
+                offset: '20 50',
+              },
+              width: '300px',
+            },
+            'success',
+            2000
+          );
         }
         else{
           notify(
